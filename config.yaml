@@ -1,0 +1,79 @@
+# Project Configuration for IndicBERT Multilingual Sentiment Classifier
+
+model:
+  pretrained_model_name_or_path: "ai4bharat/IndicBERTv2-MLM-only"
+  model_type: "bert"
+  local_model_dir: "models/indicbert_sentiment"
+  hf_repo_id: ""  # Optional: Hugging Face Hub repository (e.g., username/indicbert-sentiment)
+  num_labels: 2
+  id2label:
+    0: "negative"
+    1: "positive"
+  label2id:
+    negative: 0
+    positive: 1
+
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  raw_file: "data/raw/indic_sentiment_raw.csv"
+  train_file: "data/processed/train.csv"
+  val_file: "data/processed/val.csv"
+  test_file: "data/processed/test.csv"
+  dataset_metadata_file: "data/processed/dataset_summary.json"
+  history_file: "data/prediction_history.csv"
+  supported_languages:
+    - "Tamil"
+    - "Hindi"
+    - "Malayalam"
+  language_codes:
+    Tamil: "ta"
+    Hindi: "hi"
+    Malayalam: "ml"
+  split_ratios:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+  random_seed: 42
+
+training:
+  max_length: 128
+  batch_size: 16
+  learning_rate: 0.001  # 1e-3 when training classification head, 2e-5 for full fine-tuning
+  head_learning_rate: 0.001
+  full_finetune_learning_rate: 0.00002
+  freeze_base_model: true  # True for fast CPU training without OOM; False for full GPU fine-tuning
+  trainable_layers: "head"  # "head", "top1", or "all"
+  num_epochs: 20
+  weight_decay: 0.01
+  warmup_ratio: 0.1
+  early_stopping_patience: 3
+  logging_steps: 10
+  eval_steps: 50
+  seed: 42
+
+smoke_test:
+  max_samples: 30
+  batch_size: 4
+  num_epochs: 1
+  max_length: 64
+
+low_resource_experiment:
+  fractions:
+    - 0.10
+    - 0.25
+    - 0.50
+    - 1.00
+  quick_fractions:
+    - 0.25
+    - 1.00
+  results_csv: "results/low_resource_comparison.csv"
+  plot_path: "results/low_resource_comparison.png"
+
+results:
+  dir: "results"
+  metrics_file: "results/metrics.json"
+  report_file: "results/classification_report.txt"
+  confusion_matrix_plot: "results/confusion_matrix.png"
+  per_language_metrics: "results/per_language_metrics.csv"
+  training_history_file: "results/training_history.json"

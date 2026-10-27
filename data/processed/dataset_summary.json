@@ -1,0 +1,86 @@
+{
+  "train_samples": 2418,
+  "val_samples": 519,
+  "test_samples": 519,
+  "total_samples": 3456,
+  "splits": {
+    "train": {
+      "languages": {
+        "Malayalam": 806,
+        "Hindi": 806,
+        "Tamil": 806
+      },
+      "labels": {
+        "positive": 1218,
+        "negative": 1200
+      }
+    },
+    "val": {
+      "languages": {
+        "Hindi": 173,
+        "Malayalam": 173,
+        "Tamil": 173
+      },
+      "labels": {
+        "positive": 261,
+        "negative": 258
+      }
+    },
+    "test": {
+      "languages": {
+        "Tamil": 173,
+        "Hindi": 173,
+        "Malayalam": 173
+      },
+      "labels": {
+        "positive": 261,
+        "negative": 258
+      }
+    }
+  },
+  "audit_summary": {
+    "initial_sample_count": 3462,
+    "missing_values": {
+      "text": 0,
+      "language": 0,
+      "label": 0
+    },
+    "empty_text_dropped": 0,
+    "invalid_label_dropped": 0,
+    "unsupported_languages_dropped": 0,
+    "unsupported_labels_dropped": 0,
+    "conflicting_duplicate_count": 0,
+    "exact_duplicates_removed": 6,
+    "final_clean_sample_count": 3456,
+    "language_distribution": {
+      "Tamil": 1152,
+      "Hindi": 1152,
+      "Malayalam": 1152
+    },
+    "label_distribution": {
+      "positive": 1740,
+      "negative": 1716
+    },
+    "language_label_crosstab": {
+      "negative": {
+        "Hindi": 572,
+        "Malayalam": 572,
+        "Tamil": 572
+      },
+      "positive": {
+        "Hindi": 580,
+        "Malayalam": 580,
+        "Tamil": 580
+      }
+    },
+    "text_statistics": {
+      "total_texts": 3456,
+      "char_len_mean": 148.09,
+      "char_len_min": 14,
+      "char_len_max": 651,
+      "word_len_mean": 20.17,
+      "word_len_min": 2,
+      "word_len_max": 100
+    }
+  }
+}

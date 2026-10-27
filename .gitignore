@@ -1,0 +1,76 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# Environment variables, credentials, and local secrets
+.env
+*.env
+.env.*
+.streamlit/secrets.toml
+*.pem
+*.key
+credentials.json
+
+# Model weights and large tokenizer assets belong on the Hugging Face Hub,
+# not in Git. Keep small config/metadata files and models/README.md.
+models/**/*.safetensors
+models/**/*.bin
+models/**/*.pt
+models/**/*.pth
+models/**/*.onnx
+models/**/pytorch_model*
+models/**/tf_model*
+models/**/flax_model*
+models/**/optimizer.pt
+models/**/scheduler.pt
+models/**/tokenizer.json
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# Hugging Face and other downloaded model caches
+.cache/
+cache/
+**/.cache/
+**/huggingface/hub/
+**/huggingface/transformers/
+**/models--*/
+.ipynb_checkpoints/
+
+# User-specific prediction history may contain private text.
+data/prediction_history.csv
+data/**/*.parquet
+data/**/*.feather
+data/**/*.arrow
+data/**/*.h5
+data/**/*.hdf5
+
+# Generated result tables/reports can be recreated; retain the small charts.
+results/*.csv
+results/*.json
+results/*.txt
+
+# Temporary files and operating-system metadata
+*.tmp
+*.temp
+*.log
+~$*
+.DS_Store
+Thumbs.db
+Desktop.ini
