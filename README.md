@@ -1,4 +1,4 @@
-# Low-Resource Indic Text Classifier
+# indicbert-text-classifier: Low-Resource Indic Text Classifier
 
 Indic-language sentiment classification with transfer learning from
 [`ai4bharat/IndicBERTv2-MLM-only`](https://huggingface.co/ai4bharat/IndicBERTv2-MLM-only).
